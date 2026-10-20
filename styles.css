@@ -761,3 +761,4 @@ a.signin-trigger{display:inline-block}
 :root[data-theme="dark"] .envelope{--blush:#f7b9c7;--blush-deep:#f29bb0}
 .env-seal{font:600 13px/1.15 var(--sans);letter-spacing:.12em;text-transform:uppercase}
 .env-seal:disabled{opacity:.6;cursor:wait}
+.env-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
