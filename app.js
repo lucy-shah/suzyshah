@@ -3,7 +3,7 @@ const defaultState = {
   intro: "I’m a high school student at Newbury Park High School who loves filmmaking, writing, and telling stories. I’m involved in Girl Scouts, mock trial, and community volunteering, which have helped me become a stronger leader and communicator. I enjoy being creative, working with others, and challenging myself to try new things. In the future, I hope to pursue filmmaking and continue developing my skills as a writer and director.",
   projects: [
     { title: "The Version I Was", year: "2025", credits: "Writer, Director, Producer · Approx. 10 min", notes: "2nd Place, NXT National Screenwriting Competition · CVAF Film Festival selection", script: "", scriptPdf: "assets/scripts/the-version-i-was.pdf", image: "assets/poster-the-version-i-was.jpg" },
-    { title: "The Candidate", year: "2026", credits: "Writer, Director, Producer · Approx. 10 min", notes: "", script: "", scriptPdf: "assets/scripts/the-candidate.pdf", image: "assets/suzy-camera-portrait.jpg" },
+    { title: "The Candidate", year: "2026", credits: "Writer, Director, Producer · Approx. 10 min", notes: "", script: "", scriptPdf: "assets/scripts/the-candidate.pdf", image: "assets/poster-the-candidate.jpg" },
     { title: "One Last Summer", year: "2025", credits: "Writer, Director, Producer · Approx. 10 min", notes: "", script: "", image: "assets/poster-one-last-summer.jpg" },
     { title: "The Girl in the Trees", year: "2025", credits: "Writer, Director, Producer · Approx. 7 min", notes: "CVAF Film Festival selection", script: "", scriptPdf: "assets/scripts/the-girl-in-the-trees.pdf", image: "assets/poster-the-girl-in-the-trees.jpg" }
   ]
@@ -13,7 +13,8 @@ const oldDefaultIntro = "I'm a student filmmaker, writer, and director from Newb
 const posterUpgrades = {
   "The Version I Was": { from: "assets/suzy-filming.jpg", to: "assets/poster-the-version-i-was.jpg" },
   "One Last Summer": { from: "assets/suzy-profile-camera.jpg", to: "assets/poster-one-last-summer.jpg" },
-  "The Girl in the Trees": { from: "assets/suzy-shooting.jpg", to: "assets/poster-the-girl-in-the-trees.jpg" }
+  "The Girl in the Trees": { from: "assets/suzy-shooting.jpg", to: "assets/poster-the-girl-in-the-trees.jpg" },
+  "The Candidate": { from: "assets/suzy-camera-portrait.jpg", to: "assets/poster-the-candidate.jpg" }
 };
 
 function loadState() {
