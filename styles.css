@@ -762,3 +762,4 @@ a.signin-trigger{display:inline-block}
 .env-seal{font:600 13px/1.15 var(--sans);letter-spacing:.12em;text-transform:uppercase}
 .env-seal:disabled{opacity:.6;cursor:wait}
 .env-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.pf-explore{color:var(--ink)}a.pf-explore:hover{text-decoration:underline;text-decoration-color:var(--pink);text-decoration-thickness:2px;text-underline-offset:4px}
