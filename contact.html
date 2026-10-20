@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5eee2">
+  <meta name="description" content="Get in touch with Suzy Shah.">
+  <title>Contact — Suzy Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+QLD+Hand&family=Lacquer&family=Libre+Caslon+Condensed:wght@400;500;600&family=Sigmar+One&family=Twinkle+Star&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+  <script src="/site.js" defer></script>
+  <script src="/contact.js" defer></script>
+</head>
+<body class="subpage">
+  <header class="site-header">
+    <a class="wordmark script" href="/" aria-label="Suzy home">Suzy<span class="spark" aria-hidden="true">✧</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation"><span></span><span></span></button>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="/">Home</a><a href="/portfolio">Portfolio</a><a href="/resume">Resume</a><a class="active" href="/contact" aria-current="page">Contact</a>
+    </nav>
+    <div class="header-actions"><button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg></button><a class="signin-trigger" href="/#sign-in">Sign In</a></div>
+  </header>
+
+  <main>
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero-copy">
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h1 id="page-title">Contact<span class="spark" aria-hidden="true">✧</span></h1>
+        <p class="script page-note">I’d love to hear from you</p>
+        <ul class="contact-details page-contact">
+          <li><span class="eyebrow">EMAIL</span><a href="mailto:suzyshah9@gmail.com">suzyshah9@gmail.com</a></li>
+          <li><span class="eyebrow">PHONE</span><a href="tel:+18057952154">805-795-2154</a></li>
+        </ul>
+      </div>
+      <figure class="polaroid page-photo"><span class="tape-strip tape-pink" aria-hidden="true"></span><span class="tape-strip tape-blue tape-br" aria-hidden="true"></span><img src="/assets/strip/suzy-mirror-camera.jpg" alt="Suzy taking a mirror photo with her Canon camera"><figcaption>SAY CHEESE</figcaption></figure>
+      <p class="sticky-note scribble page-sticky">write<br>me a<br>note ♡</p>
+    </section>
+
+    <section class="ct-board" aria-label="Send a note and find me online">
+      <div class="envelope" id="message">
+        <div class="env-back" aria-hidden="true"></div>
+        <form class="env-letter" id="note-form" novalidate>
+          <p class="eyebrow">SAY HELLO</p>
+          <h2 class="script">send a note</h2>
+          <p class="env-to">To: Suzy Shah</p>
+          <label class="env-field">Your name<input name="name" type="text" autocomplete="name" required></label>
+          <label class="env-field">Your email<input name="email" type="email" autocomplete="email" required></label>
+          <label class="env-field">What's it about?
+            <select name="topic">
+              <option>Saying hi</option>
+              <option>A photo shoot</option>
+              <option>Working on a film together</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label class="env-field">Your note<textarea name="note" rows="5" required></textarea></label>
+          <p class="env-error" role="alert" hidden>Please add your name, a valid email, and a note.</p>
+        </form>
+        <div class="env-front" aria-hidden="true"><span class="env-stamp">✿<small>SUZY<br>POST</small></span><span class="env-postmark">NEWBURY PARK · CA</span></div>
+        <button class="env-seal" type="submit" form="note-form"><span>seal &amp;<br>send</span></button>
+        <div class="env-sent" role="status" hidden>
+          <p class="script">sealed with love ♡</p>
+          <p>Your email app should open with your note ready to go. Just press send there.</p>
+          <p class="env-fallback">Nothing opened? Email <a href="mailto:suzyshah9@gmail.com">suzyshah9@gmail.com</a> directly.</p>
+          <button type="button" class="text-link env-again">WRITE ANOTHER</button>
+        </div>
+      </div>
+
+      <aside class="ct-socials" id="socials" aria-labelledby="socials-title">
+        <p class="eyebrow">FIND ME</p>
+        <h2 class="script" id="socials-title">socials</h2>
+        <a class="social-chip ig" href="https://www.instagram.com/suzyshahh/" target="_blank" rel="noopener"><span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg></span><span><small>INSTAGRAM</small>@suzyshahh</span></a>
+        <a class="social-chip tt" href="https://www.tiktok.com/@suzy.shah" target="_blank" rel="noopener"><span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.3 6.3 0 1 0 5.3 6.2V8.6a8 8 0 0 0 4.4 1.4V6.7a4.6 4.6 0 0 1-4.4-4.7z"/></svg></span><span><small>TIKTOK</small>@suzy.shah</span></a>
+        <p class="scribble ct-socials-note">come say hi ✶</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer><a class="wordmark script" href="/">Suzy<span class="spark" aria-hidden="true">✧</span></a><p>Made with feeling · Newbury Park, CA</p><p class="footer-links"><a href="https://www.instagram.com/suzyshahh/" target="_blank" rel="noopener">Instagram ⤓</a><a href="https://www.tiktok.com/@suzy.shah" target="_blank" rel="noopener">TikTok ⤓</a><a href="mailto:suzyshah9@gmail.com">Email ⤓</a></p></footer>
+</body>
+</html>

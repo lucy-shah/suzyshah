@@ -28,7 +28,9 @@ const server = createServer(async (request, response) => {
     return;
   }
 
-  const requestedPath = pathname === "/" ? "/index.html" : pathname;
+  // Clean page URLs: /portfolio serves portfolio.html.
+  const trimmed = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+  const requestedPath = trimmed === "/" ? "/index.html" : path.extname(trimmed) ? trimmed : `${trimmed}.html`;
   const filePath = path.resolve(root, `.${requestedPath}`);
   if (!filePath.startsWith(`${root}${path.sep}`)) {
     response.writeHead(403).end("Forbidden");

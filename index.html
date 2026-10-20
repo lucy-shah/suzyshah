@@ -5,93 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5eee2">
   <meta name="description" content="Suzy Shah — Newbury Park filmmaker, writer, and director.">
-  <title>Suzy — Creative Portfolio</title>
+  <title>Suzy Shah — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=DM+Sans:wght@400;500;600&family=Hachi+Maru+Pop&family=Libre+Caslon+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+QLD+Hand&family=Lacquer&family=Libre+Caslon+Condensed:wght@400;500;600&family=Sigmar+One&family=Twinkle+Star&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+  <script src="/site.js" defer></script>
+  <script src="/app.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <a class="wordmark script" href="#home" aria-label="Suzy home">Suzy<span class="spark">✳</span></a>
+    <a class="wordmark script" href="/" aria-label="Suzy home">Suzy<span class="spark" aria-hidden="true">✧</span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation"><span></span><span></span></button>
     <nav id="main-nav" aria-label="Main navigation">
-      <a class="active" href="#home">Home</a><a href="#portfolio">Portfolio</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
+      <a class="active" href="/" aria-current="page">Home</a><a href="/portfolio">Portfolio</a><a href="/resume">Resume</a><a href="/contact">Contact</a>
     </nav>
-    <button class="signin-trigger tape pink" type="button" data-open-signin>Sign In <span class="spark">✳</span></button>
+    <div class="header-actions"><button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg></button><button class="signin-trigger" type="button" data-open-signin>Sign In</button></div>
   </header>
 
   <main>
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="scribble note note-left">stories<br>in every<br>frame <span>✳</span></p>
-        <h1 id="hero-title">creative<br><span>portfolio</span></h1>
-        <p class="hero-signature script">Suzy <span class="spark">✳</span></p>
-        <p class="eyebrow specialties">FILM&nbsp; / &nbsp;WRITING&nbsp; / &nbsp;DIRECTING&nbsp; / &nbsp;CINEMATOGRAPHY</p>
-        <a class="button tape blue" href="#portfolio">Explore My Work <span aria-hidden="true">⟶</span></a>
+        <p class="scribble note-left">lights,<br>camera,<br>action!</p>
+        <h1 id="hero-title"><span class="h1-line">Suzy</span><span class="h1-line indent">Shah</span></h1>
+        <p class="hero-signature script">welcome to my world<span class="spark" aria-hidden="true">❀</span></p>
+        <p class="specialties">FILM <i>|</i> WRITING <i>|</i> DIRECTING <i>|</i> CINEMATOGRAPHY</p>
+        <a class="button pill blue" href="/portfolio">Explore My Work <span aria-hidden="true">→</span></a>
       </div>
       <div class="hero-collage" aria-label="A collage of Suzy's filmmaker portraits">
-        <div class="paint paint-blue"></div><div class="paint paint-pink"></div>
-        <img class="portrait photo-frame" src="assets/suzy-with-camera.jpg" alt="Suzy holding her Canon camera outdoors">
-        <span class="scribble portrait-note">good<br>things<br>take time <span>♡</span></span>
-        <img class="postcard photo-frame" src="assets/suzy-camera-sky.jpg" alt="Suzy filming beneath a clear blue sky">
-        <div class="film-ribbon" aria-label="Film strip of travel and portrait photographs">
-          <img src="assets/suzy-profile-camera.jpg" alt="Suzy framing a shot">
-          <img src="assets/suzy-shooting.jpg" alt="Suzy looking through her camera">
-          <img src="assets/suzy-camera-portrait.jpg" alt="Suzy with her camera">
-          <img src="assets/suzy-filming.jpg" alt="Suzy on location">
+        <span class="tape-strip tape-pink tape-portrait" aria-hidden="true"></span>
+        <span class="tape-strip tape-blue tape-corner" aria-hidden="true"></span>
+        <figure class="polaroid portrait"><img src="/assets/suzy-with-camera.jpg" alt="Suzy holding her Canon camera outdoors"></figure>
+        <span class="star" aria-hidden="true">✶</span>
+        <figure class="polaroid postcard"><img src="/assets/strip/suzy-versailles.jpg" alt="Suzy in the courtyard at Versailles"><figcaption><svg class="pin" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.5A2.5 2.5 0 1 1 6 3.5a2.5 2.5 0 0 1 0 5z"/></svg>VERSAILLES</figcaption></figure>
+        <span class="tape-strip tape-pink tape-postcard" aria-hidden="true"></span>
+        <span class="tape-strip tape-blue tape-postcard-top" aria-hidden="true"></span>
+        <p class="sticky-note scribble">photographer,<br>writer,<br>director &amp;<br>producer</p>
+        <div class="film-ribbon" aria-label="Film strip of behind-the-scenes and travel photos">
+          <span class="film-frame"><img src="/assets/strip/suzy-national-stage.jpg" alt="Suzy seated on stage at a national convention"></span>
+          <span class="film-frame"><img src="/assets/strip/bts-in-between-slate.jpg" alt="Suzy holding the slate on the set of In Between"></span>
+          <span class="film-frame"><img src="/assets/strip/suzy-mirror-camera.jpg" alt="Suzy taking a mirror photo with her Canon camera"></span>
+          <span class="film-frame"><img src="/assets/strip/bts-version-i-was-slate.jpg" alt="Suzy reading the slate for The Version I Was"></span>
+          <span class="film-frame"><img src="/assets/suzy-camera-sky.jpg" alt="Suzy filming beneath a clear blue sky"></span>
+          <span class="film-frame"><img src="/assets/strip/suzy-convention-balcony.jpg" alt="Suzy on a balcony above a convention hall"></span>
         </div>
       </div>
-      <p class="scribble note note-right">different<br>places,<br>same me <span>♡</span></p>
+      <blockquote class="quote note-right"><p>“Follow the fun. If I’m not having fun, I’m doing it wrong.”</p><cite>— Jordan Peele</cite></blockquote>
     </section>
 
     <section class="intro-feature" id="about">
       <article class="about-card">
-        <div class="about-content"><p class="eyebrow">HI, I'M</p><h2>Suzy!</h2><p id="about-text">I'm a student filmmaker, writer, and director from Newbury Park, California. I love character-driven stories and realistic teen characters, and work across screenwriting, directing, producing, editing, and live broadcast production.</p><p class="script closing">stories with a little heart <span>♡</span></p></div>
-        <img src="assets/suzy-portrait-landscape.jpg" alt="Suzy on location with camera in hand">
+        <div class="about-content"><p class="eyebrow">HELLO, I'M</p><h2>Suzy!</h2><p id="about-text">I’m a high school student at Newbury Park High School who loves filmmaking, writing, and telling stories. I’m involved in Girl Scouts, mock trial, and community volunteering, which have helped me become a stronger leader and communicator. I enjoy being creative, working with others, and challenging myself to try new things. In the future, I hope to pursue filmmaking and continue developing my skills as a writer and director.</p><p class="script closing">stories with a little heart ♡</p></div>
+        <figure class="polaroid about-photo"><span class="tape-strip tape-pink" aria-hidden="true"></span><span class="tape-strip tape-blue tape-br" aria-hidden="true"></span><img src="/assets/suzy-portrait-landscape.jpg" alt="Suzy on location with camera in hand"><figcaption>ON LOCATION</figcaption></figure>
+        <span class="about-star" aria-hidden="true">✧</span>
       </article>
       <article class="featured" aria-labelledby="featured-title">
-        <div class="featured-copy"><p class="eyebrow">FEATURED WORK</p><h2 id="featured-title">selected<br>projects <span class="spark">✳</span></h2><p>Four original short films, written, directed, and produced. A few stories I'm proud to share.</p><a class="text-link" href="#portfolio">VIEW FILMOGRAPHY <span>⟶</span></a></div>
+        <div class="featured-copy"><p class="eyebrow">FEATURED WORK</p><h2 id="featured-title">selected<br>projects<span class="spark" aria-hidden="true">✶</span></h2><p>Four original short films, written, directed, and produced. A few stories I'm proud to share.</p><a class="text-link" href="/portfolio#film">VIEW FILMOGRAPHY <span>→</span></a></div>
         <div class="project-slider">
-          <div class="slide-image-wrap"><img id="slide-image" src="assets/suzy-filming.jpg" alt="Suzy filming on location"><p id="slide-caption">The Version I Was · 2025</p></div>
-          <div class="slider-controls"><span id="slide-count">● ○ ○ ○</span><div><button type="button" data-slide="prev" aria-label="Previous project">←</button><button type="button" data-slide="next" aria-label="Next project">→</button></div></div>
+          <span class="tape-strip tape-pink" aria-hidden="true"></span>
+          <span class="tape-strip tape-blue tape-tr" aria-hidden="true"></span>
+          <div class="slide-image-wrap"><img id="slide-image" src="/assets/poster-the-version-i-was.jpg" alt="Poster for The Version I Was"><p id="slide-caption">The Version I Was · 2025</p></div>
+          <div class="slider-controls"><span id="slide-count" aria-hidden="true">● ○ ○ ○</span><button type="button" data-slide="prev" aria-label="Previous project">←</button><button type="button" data-slide="next" aria-label="Next project">→</button></div>
         </div>
-        <p class="scribble real-note">real<br>people,<br>real stories <span>♡</span></p>
       </article>
     </section>
 
-    <div class="film-divider" aria-hidden="true">
-      <div class="film-track"><img src="assets/suzy-with-camera.jpg" alt=""><img src="assets/suzy-profile-camera.jpg" alt=""><img src="assets/suzy-shooting.jpg" alt=""><img src="assets/suzy-camera-portrait.jpg" alt=""><img src="assets/suzy-filming.jpg" alt=""><img src="assets/suzy-camera-sky.jpg" alt=""><img src="assets/suzy-portrait-landscape.jpg" alt=""></div>
+    <div class="film-divider">
+      <p class="scribble explore-note">more to<br>explore →</p>
+      <div class="film-window" aria-hidden="true"><div class="film-track"><span class="film-frame"><img src="/assets/suzy-with-camera.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/bts-in-between-slate.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/poster-one-last-summer.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/suzy-national-stage.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-profile-camera.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-screening-credits.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/bts-version-i-was-slate.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/poster-the-version-i-was.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/suzy-versailles.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-camera-portrait.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-speaking.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/bts-night-shoot.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/poster-the-girl-in-the-trees.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/suzy-mirror-camera.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-filming.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/suzy-convention-balcony.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-camera-sky.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-portrait-landscape.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-with-camera.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/bts-in-between-slate.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/poster-one-last-summer.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/suzy-national-stage.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-profile-camera.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-screening-credits.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/bts-version-i-was-slate.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/poster-the-version-i-was.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/suzy-versailles.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-camera-portrait.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-speaking.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/bts-night-shoot.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/poster-the-girl-in-the-trees.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/suzy-mirror-camera.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-filming.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/strip/suzy-convention-balcony.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-camera-sky.jpg" alt="" loading="lazy"></span><span class="film-frame"><img src="/assets/suzy-portrait-landscape.jpg" alt="" loading="lazy"></span></div></div>
     </div>
 
     <section class="portfolio section-wrap" id="portfolio" aria-labelledby="portfolio-title">
-      <div class="section-heading"><p class="eyebrow">A LOOK AT MY</p><h2 id="portfolio-title">Portfolio <span class="spark">✳</span></h2><p class="scribble explore-note">more to explore ⟶</p></div>
+      <div class="section-heading"><p class="eyebrow">A LOOK AT MY</p><h2 id="portfolio-title">Portfolio<span class="spark" aria-hidden="true">❀</span></h2></div>
       <div class="category-grid">
-        <a class="category-card" href="#filmography"><img src="assets/suzy-filming.jpg" alt="Suzy filming on location"><span class="script">film</span></a>
-        <a class="category-card" href="#filmography"><img src="assets/suzy-camera-portrait.jpg" alt="Suzy with her camera"><span class="script">cinematography</span></a>
-        <a class="category-card" href="#filmography"><img src="assets/suzy-profile-camera.jpg" alt="Suzy preparing a shot"><span class="script">directing</span></a>
-        <a class="category-card" href="#filmography"><img src="assets/suzy-shooting.jpg" alt="Suzy looking through her camera"><span class="script">writing</span></a>
+        <a class="category-card" href="/portfolio#film"><img class="poster-crop" src="/assets/poster-one-last-summer.jpg" alt="Poster for One Last Summer"><span class="script">film</span></a>
+        <a class="category-card" href="/portfolio#cinematography"><img src="/assets/suzy-mirror-camera.jpg" alt="Suzy taking a mirror photo with her Canon camera"><span class="script">cinematography</span></a>
+        <a class="category-card" href="/portfolio#directing"><img src="/assets/suzy-screening-credits.jpg" alt="Written and directed by Suzy Shah credit on a theater screen"><span class="script">directing</span></a>
+        <a class="category-card" href="/portfolio#writing"><img class="poster-crop" src="/assets/poster-the-version-i-was.jpg" alt="Poster for The Version I Was"><span class="script">writing</span></a>
       </div>
+    </section>
+
+    <section class="pf-quotes home-quotes" aria-label="Lines from filmmakers I love">
+      <p class="scribble pf-quotes-note">lines I think about a lot →</p>
+      <figure class="pf-quote-card"><span class="tape-strip tape-pink" aria-hidden="true"></span><blockquote>“Don’t you think maybe they are the same thing? Love and attention?”</blockquote><figcaption><strong>Greta Gerwig</strong><span><em>Lady Bird</em>, written &amp; directed</span></figcaption></figure>
+      <figure class="pf-quote-card"><span class="tape-strip tape-blue" aria-hidden="true"></span><blockquote>“Let’s never come here again, because it would never be as much fun.”</blockquote><figcaption><strong>Sofia Coppola</strong><span><em>Lost in Translation</em>, written &amp; directed</span></figcaption></figure>
+      <figure class="pf-quote-card"><span class="tape-strip tape-pink" aria-hidden="true"></span><blockquote>“There are no two words in the English language more harmful than ‘good job.’”</blockquote><figcaption><strong>Damien Chazelle</strong><span><em>Whiplash</em>, written &amp; directed</span></figcaption></figure>
     </section>
 
     <section class="resume-section section-wrap" id="resume" aria-labelledby="resume-title">
-      <div class="resume-heading"><p class="eyebrow">A LITTLE ABOUT THE WORK</p><h2 id="resume-title">On paper, too.</h2><p>Writer · Director · Producer</p></div>
+      <div class="resume-heading"><h2 id="resume-title">My resume</h2><p>Writer · Director · Producer</p></div>
       <div class="resume-content">
-        <div class="filmography" id="filmography"><p class="eyebrow">FILMOGRAPHY</p><div id="film-list"></div><p class="resume-note">Eight original screenplays · Student Spotlight Screenplay Competition finalist</p></div>
-        <div class="resume-downloads"><p class="eyebrow">DOWNLOAD RESUMES</p><a class="resume-link" href="assets/suzy-shah-resume.pdf" target="_blank" rel="noopener">General resume <span>↗</span></a><a class="resume-link" href="assets/suzy-shah-film-resume.pdf" target="_blank" rel="noopener">Film resume <span>↗</span></a><p>Producer of the Show, Panther TV · President, Conejo Valley Association Filmmakers</p><p class="skills">Final Cut Pro · DaVinci Resolve · Screenwriting · Camera · Lighting · Audio · Live broadcast</p></div>
+        <div class="experience">
+          <article class="xp-card">
+            <p class="eyebrow">WORK</p>
+            <h3>Olive Garden <span>Host</span></h3>
+            <p class="xp-when">March 2026 – Present</p>
+            <p>Welcomes guests, manages seating and the flow of the dining room, and keeps a fast-paced host stand organized and running smoothly.</p>
+          </article>
+          <article class="xp-card">
+            <p class="eyebrow">BROADCASTING</p>
+            <h3>Panther TV <span>Producer of the Show</span></h3>
+            <p class="xp-when">3 years</p>
+            <p>Writing, producing, filming, editing, and working in student broadcast media.</p>
+          </article>
+          <article class="xp-card">
+            <p class="eyebrow">LEADERSHIP</p>
+            <h3>Girl Scouts <span>Delegate</span></h3>
+            <p class="xp-when">11+ years</p>
+            <p>Served as a delegate representing fellow Girl Scouts in council and national-level activities, with years of leadership development and community service.</p>
+          </article>
+          <article class="xp-card">
+            <p class="eyebrow">COMPETITION</p>
+            <h3>Mock Trial <span>Best Attorney, two years in a row</span></h3>
+            <p class="xp-when">4 years</p>
+            <p>Competitive courtroom simulations: building case strategy, preparing witness examinations, and arguing persuasively under pressure.</p>
+          </article>
+          <p class="xp-also"><span class="eyebrow">ALSO</span> Community volunteer, 9 years · Stunt athletics · Newbury Park High School, 12th grade</p>
+        </div>
+        <div class="resume-downloads"><p class="eyebrow">DOWNLOAD RESUME</p><a class="resume-link" href="/assets/suzy-shah-resume.pdf" target="_blank" rel="noopener">Resume <span>⤓</span></a><p>President, Conejo Valley Association Filmmakers</p><p class="skills">Final Cut Pro · DaVinci Resolve · Screenwriting · Camera · Lighting · Audio · Live broadcast · Public speaking · Leadership &amp; teamwork · Customer service</p></div>
       </div>
     </section>
 
-    <section class="contact section-wrap" id="contact"><p class="eyebrow">HAVE A GOOD FEELING?</p><h2>Let's make something<br>that feels like <em>you.</em></h2><a class="button tape pink" href="mailto:suzyshah9@gmail.com">Say hello <span>⟶</span></a></section>
+    <section class="contact section-wrap" id="contact">
+      <figure class="polaroid contact-photo contact-left"><span class="tape-strip tape-blue" aria-hidden="true"></span><img src="/assets/suzy-speaking.jpg" alt="Suzy smiling at a podium on stage" loading="lazy"><figcaption class="script">on stage ♡</figcaption></figure>
+      <figure class="polaroid contact-photo contact-right"><span class="tape-strip tape-pink" aria-hidden="true"></span><img src="/assets/suzy-screening-credits.jpg" alt="Written and directed by Suzy Shah credit on a theater screen" loading="lazy"><figcaption class="script">screening night</figcaption></figure>
+      <p class="eyebrow">GET IN TOUCH</p><h2>Want to work together?<br>I’d love to <em class="highlight">hear from you.</em></h2><a class="button pill pink" href="mailto:suzyshah9@gmail.com">Say hello <span>→</span></a>
+      <ul class="contact-details">
+        <li><span class="eyebrow">EMAIL</span><a href="mailto:suzyshah9@gmail.com">suzyshah9@gmail.com</a></li>
+        <li><span class="eyebrow">PHONE</span><a href="tel:+18057952154">805-795-2154</a></li>
+      </ul>
+    </section>
   </main>
 
-  <footer><a class="wordmark script" href="#home">Suzy<span class="spark">✳</span></a><p>Made with feeling · Newbury Park, CA</p><a href="mailto:suzyshah9@gmail.com">Get in touch ↗</a></footer>
+  <footer><a class="wordmark script" href="/">Suzy<span class="spark" aria-hidden="true">✧</span></a><p>Made with feeling · Newbury Park, CA</p><p class="footer-links"><a href="https://www.instagram.com/suzyshahh/" target="_blank" rel="noopener">Instagram ⤓</a><a href="https://www.tiktok.com/@suzy.shah" target="_blank" rel="noopener">TikTok ⤓</a><a href="mailto:suzyshah9@gmail.com">Email ⤓</a></p></footer>
 
   <dialog class="signin-dialog" aria-labelledby="signin-title">
     <button class="dialog-close" type="button" aria-label="Close sign in">×</button>
     <p class="eyebrow">MEMBER ACCESS</p><h2 id="signin-title">Welcome back.</h2><p class="dialog-intro">Real sign-in isn't connected yet. Use the local demo editor to edit the portfolio in this browser.</p>
-    <button class="button tape blue" id="open-demo-editor" type="button">Open Local Demo Editor <span>⟶</span></button>
+    <button class="button pill blue" id="open-demo-editor" type="button">Open Local Demo Editor <span>⟶</span></button>
     <p class="endpoint-note">Auth route placeholders: <code>POST /api/auth/sign-in</code> · <code>POST /api/auth/sign-out</code> · <code>GET /api/auth/session</code></p>
   </dialog>
   <dialog class="script-dialog" aria-labelledby="script-title">
@@ -107,7 +159,7 @@
       <label class="editor-label">About text<textarea id="edit-intro" rows="4"></textarea></label>
       <div class="editor-projects-heading"><h3>Movies & scripts</h3><button type="button" class="add-movie" id="add-movie">+ Add movie</button></div>
       <div id="editor-projects"></div>
-      <div class="editor-actions"><button type="submit" class="button tape blue">Save changes <span>⟶</span></button><button type="button" class="reset-draft" id="reset-draft">Reset to resume details</button></div>
+      <div class="editor-actions"><button type="submit" class="button pill blue">Save changes <span>⟶</span></button><button type="button" class="reset-draft" id="reset-draft">Reset to resume details</button></div>
       <p class="editor-status" role="status" aria-live="polite"></p>
     </form>
   </dialog>

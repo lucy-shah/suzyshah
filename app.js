@@ -1,12 +1,19 @@
 const STORAGE_KEY = "suzy-portfolio-draft-v1";
 const defaultState = {
-  intro: "I'm a student filmmaker, writer, and director from Newbury Park, California. I love character-driven stories and realistic teen characters, and work across screenwriting, directing, producing, editing, and live broadcast production.",
+  intro: "I’m a high school student at Newbury Park High School who loves filmmaking, writing, and telling stories. I’m involved in Girl Scouts, mock trial, and community volunteering, which have helped me become a stronger leader and communicator. I enjoy being creative, working with others, and challenging myself to try new things. In the future, I hope to pursue filmmaking and continue developing my skills as a writer and director.",
   projects: [
-    { title: "The Version I Was", year: "2025", credits: "Writer, Director, Producer · Approx. 10 min", notes: "2nd Place, NXT Kino Lime National Competition · CVAF Film Festival selection", script: "", image: "assets/suzy-filming.jpg" },
-    { title: "The Candidate", year: "2026", credits: "Writer, Director, Producer · Approx. 10 min", notes: "", script: "", image: "assets/suzy-camera-portrait.jpg" },
-    { title: "One Last Summer", year: "2025", credits: "Writer, Director, Producer · Approx. 10 min", notes: "", script: "", image: "assets/suzy-profile-camera.jpg" },
-    { title: "The Girl in the Trees", year: "2025", credits: "Writer, Director, Producer · Approx. 10 min", notes: "CVAF Film Festival selection", script: "", image: "assets/suzy-shooting.jpg" }
+    { title: "The Version I Was", year: "2025", credits: "Writer, Director, Producer · Approx. 10 min", notes: "2nd Place, NXT National Screenwriting Competition · CVAF Film Festival selection", script: "", scriptPdf: "/assets/scripts/the-version-i-was.pdf", image: "assets/poster-the-version-i-was.jpg" },
+    { title: "The Candidate", year: "2026", credits: "Writer, Director, Producer · Approx. 10 min", notes: "", script: "", scriptPdf: "/assets/scripts/the-candidate.pdf", image: "assets/suzy-camera-portrait.jpg" },
+    { title: "One Last Summer", year: "2025", credits: "Writer, Director, Producer · Approx. 10 min", notes: "", script: "", image: "assets/poster-one-last-summer.jpg" },
+    { title: "The Girl in the Trees", year: "2025", credits: "Writer, Director, Producer · Approx. 7 min", notes: "CVAF Film Festival selection", script: "", scriptPdf: "/assets/scripts/the-girl-in-the-trees.pdf", image: "assets/poster-the-girl-in-the-trees.jpg" }
   ]
+};
+
+const oldDefaultIntro = "I'm a student filmmaker, writer, and director from Newbury Park, California. I love character-driven stories and realistic teen characters, and work across screenwriting, directing, producing, editing, and live broadcast production.";
+const posterUpgrades = {
+  "The Version I Was": { from: "assets/suzy-filming.jpg", to: "assets/poster-the-version-i-was.jpg" },
+  "One Last Summer": { from: "assets/suzy-profile-camera.jpg", to: "assets/poster-one-last-summer.jpg" },
+  "The Girl in the Trees": { from: "assets/suzy-shooting.jpg", to: "assets/poster-the-girl-in-the-trees.jpg" }
 };
 
 function loadState() {
@@ -14,9 +21,15 @@ function loadState() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (!saved) return structuredClone(defaultState);
     const state = JSON.parse(saved);
+    const projects = Array.isArray(state.projects) ? state.projects : structuredClone(defaultState.projects);
+    // Drafts saved before the posters were added still point at the old placeholder photos.
+    for (const project of projects) {
+      const poster = posterUpgrades[project.title];
+      if (poster && project.image === poster.from) project.image = poster.to;
+    }
     return {
-      intro: typeof state.intro === "string" ? state.intro : defaultState.intro,
-      projects: Array.isArray(state.projects) ? state.projects : structuredClone(defaultState.projects)
+      intro: typeof state.intro === "string" && state.intro !== oldDefaultIntro ? state.intro : defaultState.intro,
+      projects
     };
   } catch {
     return structuredClone(defaultState);
@@ -41,12 +54,16 @@ function showProject(index) {
   currentProject = (index + projects.length) % projects.length;
   const project = projects[currentProject];
   slideImage.src = project.image || "assets/suzy-filming.jpg";
-  slideImage.alt = project.title ? `Behind the scenes of ${project.title}` : "Behind the scenes of Suzy filming";
+  slideImage.alt = project.title ? `Poster or still for ${project.title}` : "Suzy filming on location";
   slideCaption.textContent = [project.title || "Untitled film", project.year].filter(Boolean).join(" · ");
   slideCount.textContent = projects.map((_, i) => i === currentProject ? "●" : "○").join(" ");
 }
 
 function openScript(project) {
+  if (project.scriptPdf) {
+    window.open(project.scriptPdf, "_blank", "noopener");
+    return;
+  }
   document.querySelector("#script-title").textContent = project.title || "Untitled screenplay";
   const screenplay = project.script || "";
   document.querySelector("#script-content").textContent = screenplay;
@@ -56,34 +73,43 @@ function openScript(project) {
 }
 
 function renderFilms() {
+  // The home page no longer lists films; the slider still needs updating.
+  if (!filmList) return showProject(currentProject);
   filmList.replaceChildren();
   portfolioState.projects.forEach(project => {
     const card = document.createElement("article");
+    const thumb = document.createElement("img");
+    thumb.className = "film-thumb";
+    thumb.src = project.image || "assets/suzy-filming.jpg";
+    thumb.alt = "";
+    thumb.loading = "lazy";
+    const details = document.createElement("div");
+    card.append(thumb, details);
     const heading = document.createElement("h3");
     const title = document.createTextNode(project.title || "Untitled film");
     const year = document.createElement("span");
     year.textContent = project.year || "Year TBD";
     heading.append(title, year);
-    card.append(heading);
+    details.append(heading);
 
     if (project.credits) {
       const credits = document.createElement("p");
       credits.textContent = project.credits;
-      card.append(credits);
+      details.append(credits);
     }
     if (project.notes) {
       const notes = document.createElement("p");
       notes.className = "recognition";
       notes.textContent = project.notes;
-      card.append(notes);
+      details.append(notes);
     }
 
     const readButton = document.createElement("button");
     readButton.type = "button";
     readButton.className = "read-script";
-    readButton.textContent = "Read script ↗";
+    readButton.textContent = "Read script ⤓";
     readButton.addEventListener("click", () => openScript(project));
-    card.append(readButton);
+    details.append(readButton);
     filmList.append(card);
   });
   showProject(currentProject);
@@ -164,19 +190,6 @@ document.querySelectorAll("[data-slide]").forEach(button => {
   button.addEventListener("click", () => showProject(currentProject + (button.dataset.slide === "next" ? 1 : -1)));
 });
 
-const nav = document.querySelector("#main-nav");
-const menuToggle = document.querySelector(".menu-toggle");
-menuToggle.addEventListener("click", () => {
-  const open = menuToggle.getAttribute("aria-expanded") !== "true";
-  menuToggle.setAttribute("aria-expanded", String(open));
-  menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-  nav.classList.toggle("open", open);
-});
-nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-  nav.classList.remove("open");
-  menuToggle.setAttribute("aria-expanded", "false");
-  menuToggle.setAttribute("aria-label", "Open navigation");
-}));
 
 document.querySelectorAll("[data-open-signin]").forEach(button => button.addEventListener("click", () => signInDialog.showModal()));
 document.querySelector(".signin-dialog .dialog-close").addEventListener("click", () => signInDialog.close());
@@ -217,3 +230,6 @@ window.portfolioAuth = {
 
 aboutText.textContent = portfolioState.intro;
 renderFilms();
+
+// Sign In on the other pages links here with #sign-in.
+if (location.hash === "#sign-in") signInDialog.showModal();
