@@ -2,10 +2,10 @@ const STORAGE_KEY = "suzy-portfolio-draft-v1";
 const defaultState = {
   intro: "I’m a high school student at Newbury Park High School who loves filmmaking, writing, and telling stories. I’m involved in Girl Scouts, mock trial, and community volunteering, which have helped me become a stronger leader and communicator. I enjoy being creative, working with others, and challenging myself to try new things. In the future, I hope to pursue filmmaking and continue developing my skills as a writer and director.",
   projects: [
-    { title: "The Version I Was", year: "2025", credits: "Writer, Director, Producer · Approx. 10 min", notes: "2nd Place, NXT National Screenwriting Competition · CVAF Film Festival selection", script: "", scriptPdf: "/assets/scripts/the-version-i-was.pdf", image: "assets/poster-the-version-i-was.jpg" },
-    { title: "The Candidate", year: "2026", credits: "Writer, Director, Producer · Approx. 10 min", notes: "", script: "", scriptPdf: "/assets/scripts/the-candidate.pdf", image: "assets/suzy-camera-portrait.jpg" },
+    { title: "The Version I Was", year: "2025", credits: "Writer, Director, Producer · Approx. 10 min", notes: "2nd Place, NXT National Screenwriting Competition · CVAF Film Festival selection", script: "", scriptPdf: "assets/scripts/the-version-i-was.pdf", image: "assets/poster-the-version-i-was.jpg" },
+    { title: "The Candidate", year: "2026", credits: "Writer, Director, Producer · Approx. 10 min", notes: "", script: "", scriptPdf: "assets/scripts/the-candidate.pdf", image: "assets/suzy-camera-portrait.jpg" },
     { title: "One Last Summer", year: "2025", credits: "Writer, Director, Producer · Approx. 10 min", notes: "", script: "", image: "assets/poster-one-last-summer.jpg" },
-    { title: "The Girl in the Trees", year: "2025", credits: "Writer, Director, Producer · Approx. 7 min", notes: "CVAF Film Festival selection", script: "", scriptPdf: "/assets/scripts/the-girl-in-the-trees.pdf", image: "assets/poster-the-girl-in-the-trees.jpg" }
+    { title: "The Girl in the Trees", year: "2025", credits: "Writer, Director, Producer · Approx. 7 min", notes: "CVAF Film Festival selection", script: "", scriptPdf: "assets/scripts/the-girl-in-the-trees.pdf", image: "assets/poster-the-girl-in-the-trees.jpg" }
   ]
 };
 
